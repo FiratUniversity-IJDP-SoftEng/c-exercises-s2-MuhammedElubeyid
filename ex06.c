@@ -1,27 +1,29 @@
 #include <stdio.h>
 
-int num(void);
+int length(void);
 
-int main(void){
+int main (void){
+    int numbers[length()];
 
-int numbers[num()];
     int j=0;
     for(int i= 100; i>=50; i--){
-    if(i%3 ==0){
-     numbers[j]=i;
-      printf("%d,",numbers[j]);
-     j++;
-       }
-  }
-
-}
-
-int num(void){
-int length= 0;
-for(int i= 100; i>=50; i--){
-    if(i%3 ==0){
-        length++;
+        if(i%3 == 0){
+        numbers[j]=i;
+        printf("%d",numbers[j]);
+        if(j< length()- 1){
+            printf(", ");
+        }
+        j++;
+    }
     }
 }
-  return length;
+
+int length(void){
+      int sum= 0;
+    for(int i= 100; i>=50;i--){
+        if(i%3 == 0){
+          sum++;
+        }
+    }
+    return sum;
 }
